@@ -31,6 +31,6 @@ char	2 bytes	Stores a single character/letter or ASCII values
 
     public void printDataTypes(){
         this.dataTypes();
-        System.out.printf("Inteiro: %d\n", literal1);
+        System.out.printf("Inteiro: %d\n", myInt);
     }
 }
