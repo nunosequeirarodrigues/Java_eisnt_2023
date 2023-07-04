@@ -16,7 +16,7 @@ public class Aula03 {
        String[] cars = {"Volvo", "BMW", "Ford"};
 
        for  (String item : cars) {
-            System.out.println(i);
+            System.out.println(item);
        }
 
 
