@@ -27,3 +27,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/EX01/DB/
+/src/EX01/LIB/
