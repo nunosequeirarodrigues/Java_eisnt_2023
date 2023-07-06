@@ -15,7 +15,7 @@ public class DBClientSQLite3 implements DBClient {
 
         try
         {
-            connection = DriverManager.getConnection("jdbc:sqlite:DB/EX02.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/EX01/DB/EX02.db");
             IsOpen = true;
         }
         catch(SQLException e)
@@ -26,6 +26,11 @@ public class DBClientSQLite3 implements DBClient {
             System.err.println(e.getMessage());
             throw new DBException(e.getMessage());
         }
+    }
+
+    @Override
+    public Boolean isConnected() {
+        return IsOpen;
     }
 
     @Override
@@ -59,6 +64,7 @@ public class DBClientSQLite3 implements DBClient {
         System.out.println("write SQLite3 ...");
     }
 
+
     @Override
     public void list() throws DBException {
         System.out.println("list SQLite3 ...");
@@ -70,6 +76,10 @@ public class DBClientSQLite3 implements DBClient {
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
                 ResultSet rs = statement.executeQuery("select * from COMMENTS LIMIT 10;");
+
+                System.out.println("List " + rs.getRow() + " lines from table COMMENTS");
+
+                // criar class Comments
                 while(rs.next())
                 {
                     ++rowNumber;

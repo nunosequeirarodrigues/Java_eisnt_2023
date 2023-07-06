@@ -13,7 +13,8 @@ public class Ex02Application {
             dbClient = new DBClientFactory().getDBClient(DBClientType.SQLITE3);
         } catch (DBException e) {
 //            throw new RuntimeException(e);
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
+            return;
         }
 
         try {
@@ -22,9 +23,29 @@ public class Ex02Application {
  //           throw new RuntimeException(e);
             System.err.println(e.getMessage());
         }
-        dbClient.write( );
-        dbClient.read( );
 
+        if (dbClient.isConnected() == true) {
+
+            try {
+                dbClient.list();
+            } catch (DBException e) {
+//            throw new RuntimeException(e);
+                System.err.println(e.getMessage());
+            }
+
+            dbClient.write();
+            dbClient.read();
+
+            try {
+
+                dbClient.disconnect();
+                dbClient = null;
+
+            } catch (DBException e) {
+//            throw new RuntimeException(e);
+                System.err.println(e.getMessage());
+            }
+        }
 
         System.out.println("EX 02 <");
     }
