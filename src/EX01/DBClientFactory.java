@@ -12,7 +12,7 @@ public class DBClientFactory {
             case MYSQL:
 
             default:
-                throw new DBException(Constants.DB_EXCEPTION.toString() +dbType);
+                throw new DBException(Constants.DB_EXCEPTION.toString() + dbType);
         }
 
     }
