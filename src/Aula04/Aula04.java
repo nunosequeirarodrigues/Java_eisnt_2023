@@ -3,9 +3,15 @@ package Aula04;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 public class Aula04 {
 
     public static void main(String[] args) {
+
+        System.out.println( "Aula04.main(){" );
+
+        ArrayList<Empregado> empregados = new ArrayList<>();
+        EmpregadosArrayList emps = new EmpregadosArrayList();
 
         BufferedReader reader = new BufferedReader( new InputStreamReader(System.in));
 
@@ -67,15 +73,40 @@ public class Aula04 {
                 if (false == error) {
                     if (name.isEmpty() && idade == 0) {
                         emp = new Empregado();
+                        if(empregados.contains(emp)){
+                            System.out.println("Introduza a idade do Empregado:");
+                        }else{
+
+
+                        }
+                        empregados.add( emp );
+                        if(emps.contains(emp) == false) {
+                            emps.add(emp);
+                        }
+
                     } else {
                         emp = new Empregado(name, idade);
+                        empregados.add( emp );
+                        if(emps.contains(emp) == false) {
+                            emps.add(emp);
+                        }
                     }
 
-                    System.out.println( emp.toString() );
+
                 }
             }
+
+            System.out.println("Os Empregados introduzidos foram: ");
+            for (Empregado it: empregados) {
+                System.out.println(it);
+            }
+
+            for (Empregado it: emps) {
+                System.out.println(it);
+            }
+
         }
 
-
+        System.out.println( "Aula04.main() }" );
     }
 }

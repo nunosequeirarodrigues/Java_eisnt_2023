@@ -29,3 +29,5 @@ bin/
 .DS_Store
 /src/EX01/DB/
 /src/EX01/LIB/
+/commons-lang-2.6-bin.zip
+/gson-2.10.1.jar
