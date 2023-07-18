@@ -17,9 +17,12 @@ public class Temperatura {
             try {
 
                 System.out.println("Indique a temperatura em ºCelsius.");
+
                 temp_celsius = Float.parseFloat( reader.readLine() );
                 temp_fahrenheit = to_fahrenheit( temp_celsius );
+
                 System.out.println("A temperatura em ºFahrenheit é " + temp_fahrenheit) ;
+
             } catch (IOException | NumberFormatException e) {
                 error = true;
             }
@@ -29,6 +32,6 @@ public class Temperatura {
     }
 
     private static float to_fahrenheit( float from_celsius){
-     return (float) (from_celsius * ( 9.0f / 5.0f ) + 32.0);
+     return (from_celsius * ( 9.0f / 5.0f ) + 32.0f );
     }
 }
