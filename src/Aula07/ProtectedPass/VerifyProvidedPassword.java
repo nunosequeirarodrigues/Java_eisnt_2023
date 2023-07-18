@@ -7,13 +7,13 @@ public class VerifyProvidedPassword {
     public static void main(String[] args)
     {
         // User provided password to validate
-        String providedPassword = "myPassword123";
+        String providedPassword = "myPassword124";
 
         // Encrypted and Base64 encoded password read from database
-        String securePassword = "HhaNvzTsVYwS/x/zbYXlLOE3ETMXQgllqrDaJY9PD/U=";
+        String securePassword = "8USOoHAOFF37uvl2X4YTo4/1j8jYFFkwI0vMqDzolTg=";
 
         // Salt value stored in database
-        String salt = "EqdmPh53c9x33EygXpTpcoJvc4VXLK";
+        String salt = "VmSwRb2YJcue9Zl5hEaaxlE64V1ukE";
 
         boolean passwordMatch = PasswordUtils.verifyUserPassword(providedPassword, securePassword, salt);
 
