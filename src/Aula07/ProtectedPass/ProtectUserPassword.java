@@ -32,7 +32,7 @@ example to verify if provided user password is correct and matches my database r
 public class ProtectUserPassword {
     public static void main(String[] args)
     {
-        String myPassword = "myPassword123";
+        String myPassword = "myPassword1234";
 
         // Generate Salt. The generated value can be stored in DB.
         String salt = PasswordUtils.getSalt(30);
